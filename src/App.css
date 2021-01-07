@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
+  width: 100%;
+  background-color: #fff;
+}
+
+.App .logo {
+  display: flex;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 60px;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App header {
+  background-color: #e0c080 ;
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #202020;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App .nav-wrapper {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wrapper h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.nav-wrapper a {
+  text-decoration: none;
+  color:#202020;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+
+.main-wrapper {
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+  width: 100%;
+  min-height: 10vh;
+  color:#202020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer p {
+  font-size: 1.4rem;
+}
+
+footer a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color:#202020;
+}
+
+.gina-russell {
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gina-russell img {
+  width: 25px;
+  margin: 0 8px;
+}
+
+
+@media screen and (max-width: 800px){
+  .gina-russell {
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .App .nav-wrapper {
+    flex-direction: column;
+    /* justify-content: space-between;
+    align-items: center; */
   }
 }
+
+@media screen and (max-width: 500px){
+  
+}
+
