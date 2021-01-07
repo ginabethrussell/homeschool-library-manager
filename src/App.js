@@ -22,7 +22,6 @@ function App() {
               <Link to='/'>Home</Link>
               <Link to='/about'>About</Link>
               <Link to='/user'>Login/Signup</Link>
-              {/* <Link to='/add'>Add Books</Link> */}
             </nav>
           </div>
         </header>
@@ -37,8 +36,8 @@ function App() {
           <div className='gina-russell'>
             <p>&copy; 2021 <a href='https://ginarussell.netlify.app'>Gina Russell Software Developer</a></p>
             <div className='links'>
-              <a href=''><img src={github} alt='github icon'/></a>
-              <a href=''><img src={linkedin} alt='linkedin icon'/></a>
+              <a href='https://github.com/ginabethrussell'><img src={github} alt='github icon'/></a>
+              <a href='https://www.linkedin.com/in/gina-beth-russell/'><img src={linkedin} alt='linkedin icon'/></a>
             </div>
           </div>
          {/* <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>

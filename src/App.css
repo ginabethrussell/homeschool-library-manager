@@ -23,7 +23,7 @@
 }
 
 .App .nav-wrapper {
-  width: 80%;
+  width: 90%;
   max-width: 960px;
   margin: 0 auto;
   padding: 16px 0;
@@ -40,13 +40,17 @@
 .nav-wrapper a {
   text-decoration: none;
   color:#202020;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   padding: 8px 16px;
 }
 
 .main-wrapper {
-  min-height: 70vh;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer {

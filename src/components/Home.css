@@ -10,6 +10,7 @@
 }
 
 .home-text {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,15 +23,18 @@
     font-weight: 600;
     font-style: italic;
 }
-
+.home-wrapper h1 {
+    font-size: 3rem;
+}
 .home-wrapper p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: 8px 0;
     width: 100%;
 }
 
 .home-wrapper .cta-btn {
     font-size: 1.6rem;
+    font-weight: 600;
     background-color: #d2232a;
     color: #fff;
     border: 1px solid  #d2232a;
@@ -45,6 +49,7 @@
         flex-direction: column;
     }
     .home-text {
+        width: 85%;
         padding-left: 0;
     }
     .home-wrapper h1 {
