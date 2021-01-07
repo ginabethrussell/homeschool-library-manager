@@ -5,6 +5,7 @@
 
 .App .logo {
   display: flex;
+  align-items: center;
 }
 
 .App-logo {
@@ -23,7 +24,7 @@
 }
 
 .App .nav-wrapper {
-  width: 90%;
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 16px 0;
@@ -33,7 +34,8 @@
 }
 
 .nav-wrapper h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-left: 20px;
   font-weight: 600;
 }
 

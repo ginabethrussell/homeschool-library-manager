@@ -2,10 +2,12 @@ import logo from './stackedbooks.png';
 import { Switch, Link, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
-import LoginUser from './components/LoginUser';
+import Login from './components/Login';
+import Signup from './components/Signup';
 import github from './github-logo.png';
 import linkedin from './linkedin.png';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
@@ -21,13 +23,15 @@ function App() {
             <nav>
               <Link to='/'>Home</Link>
               <Link to='/about'>About</Link>
-              <Link to='/user'>Login/Signup</Link>
+              <Link to='/signup'>Signup</Link>
+              <Link to='/login'>Login</Link>
             </nav>
           </div>
         </header>
         <main className='main-wrapper'>
           <Switch> 
-            <Route path='/user' component={ LoginUser }  />
+            <Route path='/login' component={ Login}  />
+            <Route path='/signup' component={ Signup }  />
             <Route path='/about' component={ About } />
             <Route path='/' component={ Home } />
           </Switch>
