@@ -1,0 +1,15 @@
+.auth-wrapper h3 {
+    font-size: 2rem;
+}
+
+.auth-wrapper label {
+    font-size: 1.6rem;
+}
+
+.auth-wrapper input.form-control, .auth-wrapper .btn {
+    font-size: 1.6rem;
+}
+
+.auth-wrapper p.forgot-password, .auth-wrapper p.forgot-password a {
+    font-size: 1.6rem;
+}

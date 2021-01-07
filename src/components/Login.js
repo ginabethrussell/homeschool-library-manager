@@ -1,11 +1,11 @@
 import React from 'react';
-import './Login.css';
+import './Forms.css';
 
 function Login() {
     return (
     <div className="auth-wrapper">
-    <div className="auth-inner">
-        <form>
+        <div className="auth-inner">
+            <form>
                 <h3>Log In</h3>
 
                 <div className="form-group">
@@ -31,7 +31,7 @@ function Login() {
                 </p>
             </form>
         </div>
-        </div>
+    </div>
     )
 }
 
