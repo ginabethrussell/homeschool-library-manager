@@ -1,5 +1,4 @@
 import * as actions from  '../actions/SignupActions';
-import { LOG_OUT_USER } from '../actions/UserActions';
 
 const initialState = {
     fetchingUser: false,
@@ -38,11 +37,7 @@ export const signupReducer = ( state=initialState, action ) => {
                 bookList: [],
                 wishList: []
             }
-        case LOG_OUT_USER:
-            return {
-                initialState
-            }
-
+        
         default: return state
     }
 }
