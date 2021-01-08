@@ -2,15 +2,44 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOutUser } from '../redux/actions/UserActions';
+import { saveLibrary, getLibrary, addBook, deleteBook } from '../redux/actions/LibraryActions';
+
+import { useForm } from '../hooks/useForm';
 
 import './UserLibrary.css';
 
-function UserLibrary({userId, logOutUser}) {
+const initialValues = {
+    title: '',
+    author: '',
+    description: '',
+    level: '',
+    id: ''
+}
+
+function UserLibrary({userId, bookList, logOutUser, addBook,  deleteBook, saveLibrary, getLibrary }) {
     const history = useHistory();
+    const [ formValues, handleChange, clearForm ] = useForm(initialValues);
 
     useEffect(() => {
-        console.log(userId)
+        if (userId != ''){
+            getLibrary(userId);
+        }
+        console.log(bookList);
     }, [userId])
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        const newBook = formValues;
+        newBook.id = Date.now()
+        addBook(newBook);
+        clearForm();
+    }
+
+    const handleLogOut = () => {
+        saveLibrary(bookList);
+        logOutUser();
+    }
+
     return (
         <div className='library-wrapper'>
             { userId && (
@@ -26,7 +55,7 @@ function UserLibrary({userId, logOutUser}) {
                             />
                     </div>
                     <button onClick={() => {
-                        logOutUser();
+                        handleLogOut();
                         history.push('/');
                     }}>Log Out</button>
                     </div>
@@ -40,6 +69,8 @@ function UserLibrary({userId, logOutUser}) {
                                     type='text'
                                     placeholder='title'
                                     required
+                                    value={formValues.title}
+                                    onChange={(e) => handleChange(e.target.name, e.target.value)}
                                 />
                             </div>
                             <div className='formfield'>
@@ -49,6 +80,8 @@ function UserLibrary({userId, logOutUser}) {
                                     type='text'
                                     placeholder='author'
                                     required
+                                    value={formValues.author}
+                                    onChange={(e) => handleChange(e.target.name, e.target.value)}
                                 />
                             </div>
                             <div className='formfield'>
@@ -57,33 +90,60 @@ function UserLibrary({userId, logOutUser}) {
                                     name='description'
                                     placeholder='include an optional description'
                                     required
+                                    value={formValues.description}
+                                    onChange={(e) => handleChange(e.target.name, e.target.value)}
                                 />
                             </div>
                             <div className='formfield'>
-                                <label htmlFor='gradelevel'>Grade Level</label><br />
-                                <select id='gradelevel'
-                                    name='gradelevel'
-                                    required>
-                                    <option name='gradelevel' value='prek-2'>Pre-K - 2</option>
-                                    <option name='gradelevel' value='3-5'>3 - 5</option>
-                                    <option name='gradelevel' value='6-8'>6 - 8</option>
-                                    <option name='gradelevel' value='9-12'>9 - 12</option>
+                                <label htmlFor='level'>Level</label><br />
+                                <select id='level'
+                                    name='level'
+                                    required
+                                    value={formValues.level}
+                                    onChange={(e) => handleChange(e.target.name, e.target.value)}>
+                                    <option name='level' value=''>-- select a level --</option>
+                                    <option name='level' value='infant-toddler'>Infant - Toddler</option>
+                                    <option name='level' value='prek-2'>Pre-K - 2nd</option>
+                                    <option name='level' value='3-5'>3rd - 5th</option>
+                                    <option name='level' value='6-8'>6th - 8th</option>
+                                    <option name='level' value='9-12'>9th - 12th</option>
+                                    <option name='level' value='adult'>Adult</option>
                                 </select>
                             </div>
-                            <button type='submit'>Add</button>
+                            <button onClick={submitForm} type='submit'>Add</button>
                         </form>
                     </div>
+                    <div className='bookList'>
+                        <div className='booklist-header'>
+                            { bookList.length > 0? <h3>Book List</h3>: null }
+                        </div>
+                        { bookList.length > 0  && bookList.map( book => (
+                            <div className='book' key={book.id}>
+                                <p>{book.title}</p>
+                                <p>{book.author}</p>
+                                <p>{book.description}</p>
+                                <p>{book.level}</p>
+                                <button onClick={() => {
+                                    console.log('deleting book', book.id)
+                                    deleteBook(book.id);
+                                }}className='delete'>Delete</button>
+                                {/* <button>Edit</button> */}
+                            </div>
+                            )
+                        )}
+                    </div>
                 </>
-            )
+                )
             }
-        </div>
+        </div>   
     )
 }
 const mapStateToProps = (state) => {
     return {
-        userId: state.login.id
+        userId: state.login.id,
+        bookList: state.library.books
     }
 }
 
-const mapDispatchToProps = {logOutUser}
+const mapDispatchToProps = {logOutUser, getLibrary, saveLibrary, addBook, deleteBook}
 export default connect(mapStateToProps, mapDispatchToProps)(UserLibrary);

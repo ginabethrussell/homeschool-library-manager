@@ -10,7 +10,7 @@
 }
 
 .library-wrapper .library-header {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   padding: 30px 50px;
   display: flex;
@@ -44,9 +44,11 @@
   background-color: #e0c080;
   color: #202020;
   font-size: 1.6rem;
+  font-weight: 500;
   text-transform: uppercase;
   margin: 8px;
   border-radius: 5px;
+  outline: none;
   border-color: #e0c080;
   padding: 5px 20px;
 }
@@ -80,8 +82,51 @@
   background-color: #d2232a;
   color: #fff;
   font-size: 1.6rem;
+  font-weight: 500;
   text-transform: uppercase;
   margin: 8px;
   border-radius: 5px;
+  outline: none;
   padding: 5px 25px;
+}
+
+.bookList {
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around;
+    align-items: center; */
+}
+.booklist-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.book {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.book p {
+    margin: 5px;
+}
+.book button {
+  background-color: #e0c080;
+  color: #202020;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 5px;
+  border-radius: 5px;
+  outline: none;
+  border-color: #e0c080;
+  padding: 3px 12px;
+}
+.book button.delete {
+    margin-left: auto
 }
