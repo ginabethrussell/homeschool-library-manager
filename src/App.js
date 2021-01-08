@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import UserLibrary from './components/UserLibrary';
 import github from './github-logo.png';
 import linkedin from './linkedin.png';
 
@@ -30,6 +31,7 @@ function App() {
         </header>
         <main className='main-wrapper'>
           <Switch> 
+            <Route path='/library' component={ UserLibrary }/>
             <Route path='/login' component={ Login}  />
             <Route path='/signup' component={ Signup }  />
             <Route path='/about' component={ About } />

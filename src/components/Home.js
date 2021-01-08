@@ -1,8 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Character from '../character.png';
 import './Home.css';
 
 function Home() {
+    const history = useHistory();
+    
     return (
         <div className='home-wrapper'>
             <img className="jumbo-image" src={Character} alt='a mom in a pile of books'/>
@@ -12,7 +15,7 @@ function Home() {
                 <p>And how difficult it can be to keep track of all those books and resources you've loaned to your friends.</p>
                 <p>With <span className='brand'>Homeschool Library Manager</span> you will have access to your home library at your fingertips. Always knowing what you have and what you've shared.</p>
                 <p>Never miss out on a new resource or duplicate a purchase again.</p>
-                <button className='cta-btn'>Get Started</button>
+                <button onClick={()=> history.push('/signup')}className='cta-btn'>Get Started</button>
             </div>
         </div>
     )

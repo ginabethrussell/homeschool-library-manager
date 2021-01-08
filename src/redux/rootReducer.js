@@ -1,11 +1,6 @@
-const initialState = {
-    user: '',
-    books: [],
-    wishlist: []
-}
+import { combineReducers } from 'redux';
+import { signupReducer } from './reducers/SignupReducer';
 
-export const rootReducer = (state=initialState, action) => {
-    switch(action.type){
-        default: return state
-    }
-}
+export const rootReducer = combineReducers({
+    signup: signupReducer
+})

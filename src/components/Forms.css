@@ -1,3 +1,4 @@
+/* Additional styling to make font sizes responsive on bootstrap styled forms */
 .auth-wrapper h3 {
     font-size: 2rem;
 }
