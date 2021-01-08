@@ -1,0 +1,87 @@
+.library-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.library-wrapper .library-header {
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.library-wrapper .library-header h2 {
+  font-size: 2.4rem;
+}
+
+.library-wrapper .library-header .search-field {
+  width: 40%;
+  margin-left: auto;
+}
+
+.library-wrapper .library-header label {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.library-wrapper .library-header input {
+  font-size: 1.6rem;
+  padding: 5px 8px;
+  width: 80%;
+}
+
+.library-wrapper .library-header button {
+  background-color: #e0c080;
+  color: #202020;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin: 8px;
+  border-radius: 5px;
+  border-color: #e0c080;
+  padding: 5px 20px;
+}
+
+.addbook-form-wrapper {
+  width: 100%;
+}
+
+.addbook-form h3 {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.addbook-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.addbook-form input,
+.addbook-form select,
+.addbook-form textarea {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 5px 8px;
+}
+
+.addbook-form button {
+  background-color: #d2232a;
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin: 8px;
+  border-radius: 5px;
+  padding: 5px 25px;
+}

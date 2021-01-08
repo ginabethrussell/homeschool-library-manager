@@ -1,21 +1,51 @@
 import React from 'react';
-import './Forms.css';
+import { useForm } from '../hooks/useForm';
+import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logInUser } from '../redux/actions/LoginActions';
 
-function Login() {
+import './Forms.css'; 
+
+const initialValues = {
+    email: '',
+    password: ''
+}
+
+function Login({logInUser}) {
+    const [formValues, handleChange, clearForm] = useForm(initialValues);
+    const history = useHistory();
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        logInUser(formValues);
+        history.push('/library');
+    }
     return (
     <div className="auth-wrapper">
         <div className="auth-inner">
-            <form>
+            <form onSubmit= {submitForm}>
                 <h3>Log In</h3>
 
                 <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <label htmlFor='email'>Email address</label>
+                    <input id='email'
+                        name='email'
+                        type="email" 
+                        className="form-control" 
+                        placeholder="Enter email"
+                        value={formValues.email}
+                        onChange={(e) => handleChange(e.target.name, e.target.value) } />
                 </div>
 
                 <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <label htmlFor='password'>Password</label>
+                    <input id='password'
+                        name='password'
+                        type="password" 
+                        className="form-control" 
+                        placeholder="Enter password"
+                        value={formValues.password}
+                        onChange={(e) => handleChange(e.target.name, e.target.value)} />
                 </div>
 
                 <div className="form-group">
@@ -35,4 +65,6 @@ function Login() {
     )
 }
 
-export default Login;
+const mapDispatchToProps = {logInUser};
+
+export default connect(null, mapDispatchToProps)(Login);
