@@ -26,7 +26,6 @@ export const libraryReducer = (state=initialState, action) => {
                 books: []
             }
         case GET_LIBRARY:
-            console.log("In reducer getting library for User#", action.payload);
             let library = JSON.parse(localStorage.getItem('library'));
             if (library === null){
                 library = []

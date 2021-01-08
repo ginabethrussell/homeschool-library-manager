@@ -1,6 +1,5 @@
 import * as actions from  '../actions/LoginActions';
 import { LOG_OUT_USER } from '../actions/UserActions';
-import { saveLibrary } from '../actions/LibraryActions';
 
 const initialState = {
     fetchingUser: false,
@@ -41,7 +40,6 @@ export const loginReducer = ( state=initialState, action ) => {
             }
         case LOG_OUT_USER:
             console.log("logging out user")
-            saveLibrary();
             return {
                 initialState
             }

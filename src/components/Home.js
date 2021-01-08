@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Character from '../character.png';
+
 import './Home.css';
+
 
 function Home() {
     const history = useHistory();

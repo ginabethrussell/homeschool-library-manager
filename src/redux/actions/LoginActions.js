@@ -4,6 +4,7 @@ export const LOGIN_USER_START = 'LOGIN_USER_START';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
 
+
 export const loginUserStart = () => {
     return {
         type: LOGIN_USER_START
@@ -21,6 +22,7 @@ export const loginUserFailure = (error) => {
         payload: error
     }
 }
+
 
 export const logInUser = (user) => (dispatch) => {
     console.log("logging in", user);

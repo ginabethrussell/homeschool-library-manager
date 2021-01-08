@@ -22,8 +22,9 @@ function UserLibrary({userId, bookList, logOutUser, addBook,  deleteBook, saveLi
 
     useEffect(() => {
         if (userId != ''){
-            getLibrary(userId);
+            getLibrary();
         }
+        console.log('userId',userId);
         console.log(bookList);
     }, [userId])
 

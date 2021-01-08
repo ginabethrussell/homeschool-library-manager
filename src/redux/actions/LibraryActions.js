@@ -26,11 +26,9 @@ export const saveLibrary = (library) => {
     }
 }
 
-export const getLibrary = (id) => {
-    console.log('creating GET_LIBRARY action')
+export const getLibrary = () => {
     return {
-        type: GET_LIBRARY,
-        payload: id
+        type: GET_LIBRARY
     }
 }
 
